@@ -48,10 +48,18 @@ Route::get(
 );
 
 // Authentication routes
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'public.getLogin']);
+Route::post('auth/login', ['uses' => 'Auth\AuthController@postLogin', 'as' => 'public.postLogin']);
+Route::get('auth/logout', ['uses' => 'Auth\AuthController@getLogout', 'as' => 'public.getLogout']);
 
 // Registration routes
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register', ['uses' => 'Auth\AuthController@getRegister', 'as' => 'public.getRegister']);
+Route::post('auth/register', ['uses' => 'Auth\AuthController@postRegister', 'as' => 'public.postRegister']);
+
+// Password reset link request routes...
+Route::get('password/email', ['uses' => 'Auth\PasswordController@getEmail', 'as' => 'public.getEmail']);
+Route::post('password/email', ['uses' => 'Auth\PasswordController@postEmail', 'as' => 'public.postEmail']);
+
+// Password reset routes...
+Route::get('password/reset/{token}', ['uses' => 'Auth\PasswordController@getReset', 'as' => 'public.getReset']);
+Route::post('password/reset', ['uses' => 'Auth\PasswordController@postReset', 'as' => 'public.postReset']);

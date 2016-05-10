@@ -41,7 +41,7 @@
     }
 @endsection
 @section('content')
-    <form method="POST" action="/auth/register" class="form-signin">
+    <form method="POST" action="public.postRegister" class="form-signin">
         {!! csrf_field() !!}
         @if ($errors->count())
             <p>
@@ -61,5 +61,8 @@
         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm Password" required="">
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <div>
+            <a href="{{ route('public.getLogin') }}">Login</a>
+        </div>
     </form>
 @endsection

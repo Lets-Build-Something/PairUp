@@ -62,5 +62,9 @@
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div>
+            <a href="{{ route('public.getEmail') }}">Lost Password?</a>
+            <a href="{{ route('public.getRegister') }}">Register</a>
+        </div>
     </form>
 @endsection

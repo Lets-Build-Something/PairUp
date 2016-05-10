@@ -5,7 +5,7 @@
     <div class="collapse navbar-toggleable-xs" id="navbar-header">
         <a class="navbar-brand" href="#">Navbar</a>
         <ul class="nav navbar-nav">
-            @if ($username)
+            @if ($username || Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/logout">Logout {{ $username }}</a>
                 </li>
