@@ -39,15 +39,6 @@
 <form method="POST" action="{{ route('public.postReset') }}" class="form-reset">
     {!! csrf_field() !!}
     <input type="hidden" name="token" value="{{ $token }}">
-
-    @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-
     <label for="email" class="sr-only">{{ trans('forms.field.email') }}</label>
     <input type="email" id="email" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">
 

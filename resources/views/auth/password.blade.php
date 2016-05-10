@@ -38,11 +38,6 @@
 @section('content')
     <form method="POST" action="{{ route('public.postEmail') }}" class="form-reset">
         {!! csrf_field() !!}
-        @if ($errors->count())
-            <p>
-                {{ $errors->first('email') }}
-            </p>
-        @endif
 
         <h2 class="form-reset-heading">{{ trans('forms.headers.reset_password') }}</h2>
         <label for="email" class="sr-only">{{ trans('forms.field.email') }}</label>

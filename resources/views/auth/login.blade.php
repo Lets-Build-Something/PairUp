@@ -41,15 +41,8 @@
     }
 @endsection
 @section('content')
-    <form method="POST" action="/auth/login" class="form-signin">
+    <form method="POST" action="{{ route('public.postLogin') }}" class="form-signin">
         {!! csrf_field() !!}
-        @if ($errors->count())
-            <p>
-                {{ $errors->first('email') }}
-                {{ $errors->first('password') }}
-            </p>
-        @endif
-
         <h2 class="form-signin-heading">{{ trans('forms.headers.login') }}</h2>
         <label for="inputEmail" class="sr-only">{{ trans('forms.field.email') }}</label>
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">

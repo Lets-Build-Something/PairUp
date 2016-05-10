@@ -4,6 +4,7 @@
     <body>
         <div class="container">
             @include('layouts.partials.menu')
+            @include('errors.list')
             @yield('content')
         </div> <!-- /container -->
 

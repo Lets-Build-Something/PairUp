@@ -43,12 +43,6 @@
 @section('content')
     <form method="POST" action="{{ route('public.postRegister') }}" class="form-signin">
         {!! csrf_field() !!}
-        @if ($errors->count())
-            <p>
-                {{ $errors->first('email') }}
-                {{ $errors->first('password') }}
-            </p>
-        @endif
 
         <h2 class="form-signin-heading">{{ trans('forms.headers.register') }}</h2>
         <label for="inputEmail" class="sr-only">{{ trans('forms.field.email') }}</label>
