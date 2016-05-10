@@ -50,21 +50,21 @@
             </p>
         @endif
 
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required="" autofocus="" value="{{ old('email') }}">
+        <h2 class="form-signin-heading">{{ trans('forms.headers.login') }}</h2>
+        <label for="inputEmail" class="sr-only">{{ trans('forms.field.email') }}</label>
+        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">
 
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+        <label for="password" class="sr-only">{{ trans('forms.field.password') }}</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="{{ trans('forms.field.password') }}" required="">
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me" name="remember"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ trans('forms.actions.login') }}</button>
         <div>
             <a href="{{ route('public.getEmail') }}">Lost Password?</a>
-            <a href="{{ route('public.getRegister') }}">Register</a>
+            <a href="{{ route('public.getRegister') }}">{{ trans('forms.actions.register') }}</a>
         </div>
     </form>
 @endsection

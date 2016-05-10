@@ -43,7 +43,7 @@ class WizardPageOneTest extends TestCase
             ->type('valid@testEmail.com', 'email')
             ->pressSubmit()
             ->visitFirstWizardPage()
-            ->see(trans("forms.first_name"));
+            ->see(trans("forms.field.first_name"));
     }
 
     public function testLastNameFieldExist()
@@ -53,7 +53,7 @@ class WizardPageOneTest extends TestCase
             ->type('valid@testEmail.com', 'email')
             ->pressSubmit()
             ->visitFirstWizardPage()
-            ->see(trans("forms.last_name"));
+            ->see(trans("forms.field.last_name"));
     }
 
     public function testTownFieldExist()
@@ -63,7 +63,7 @@ class WizardPageOneTest extends TestCase
             ->type('valid@testEmail.com', 'email')
             ->pressSubmit()
             ->visitFirstWizardPage()
-            ->see(trans("forms.town"));
+            ->see(trans("forms.field.town"));
     }
 
     public function testCountryFieldExist()
@@ -73,6 +73,6 @@ class WizardPageOneTest extends TestCase
             ->type('valid@testEmail.com', 'email')
             ->pressSubmit()
             ->visitFirstWizardPage()
-            ->see(trans("forms.country"));
+            ->see(trans("forms.field.country"));
     }
 }

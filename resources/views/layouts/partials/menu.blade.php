@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav">
             @if ($username || Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="/auth/logout">Logout {{ $username }}</a>
+                    <a class="nav-link" href="/auth/logout">{{ trans("public.links.logout") }} {{ $username }}</a>
                 </li>
             @else
                 <li class="nav-item">

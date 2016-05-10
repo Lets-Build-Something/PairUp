@@ -44,10 +44,10 @@
             </p>
         @endif
 
-        <h2 class="form-reset-heading">Id forgot my password</h2>
-        <label for="email" class="sr-only">Email address</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="" value="{{ old('email') }}">
+        <h2 class="form-reset-heading">{{ trans('forms.headers.reset_password') }}</h2>
+        <label for="email" class="sr-only">{{ trans('forms.field.email') }}</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Recover</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ trans('forms.actions.reset_password') }}</button>
     </form>
 @endsection

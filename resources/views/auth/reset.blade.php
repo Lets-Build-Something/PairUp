@@ -48,15 +48,15 @@
         </ul>
     @endif
 
-    <label for="email" class="sr-only">Email address</label>
-    <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="" value="{{ old('email') }}">
+    <label for="email" class="sr-only">{{ trans('forms.field.email') }}</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">
 
-    <label for="password" class="sr-only">Password</label>
-    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+    <label for="password" class="sr-only">{{ trans('forms.field.password') }}</label>
+    <input type="password" name="password" id="password" class="form-control" placeholder="{{ trans('forms.field.password') }}" required="">
 
-    <label for="password_confirmation" class="sr-only">Password confirmation</label>
-    <input type="password" name="password_confirmation" id="password" class="form-control" placeholder="Password confirmation" required="">
+    <label for="password_confirmation" class="sr-only">{{ trans('forms.field.password_confirmation') }}</label>
+    <input type="password" name="password_confirmation" id="password" class="form-control" placeholder="{{ trans('forms.field.password_confirmation') }}" required="">
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Reset Password</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">{{ trans('forms.actions.reset_password') }}</button>
 </form>
 @endsection

@@ -41,7 +41,7 @@
     }
 @endsection
 @section('content')
-    <form method="POST" action="public.postRegister" class="form-signin">
+    <form method="POST" action="{{ route('public.postRegister') }}" class="form-signin">
         {!! csrf_field() !!}
         @if ($errors->count())
             <p>
@@ -50,19 +50,19 @@
             </p>
         @endif
 
-        <h2 class="form-signin-heading">Please register in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required="" autofocus="" value="{{ old('email') }}">
+        <h2 class="form-signin-heading">{{ trans('forms.headers.register') }}</h2>
+        <label for="inputEmail" class="sr-only">{{ trans('forms.field.email') }}</label>
+        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="{{ trans('forms.field.email') }}" required="" autofocus="" value="{{ old('email') }}">
 
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+        <label for="password" class="sr-only">{{ trans('forms.field.password') }}</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="{{ trans('forms.field.password') }}" required="">
 
-        <label for="password_confirmation" class="sr-only">Confirm Password</label>
-        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm Password" required="">
+        <label for="password_confirmation" class="sr-only">{{ trans('forms.field.password_confirmation') }}</label>
+        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ trans('forms.field.password_confirmation') }}" required="">
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ trans('forms.actions.register') }}</button>
         <div>
-            <a href="{{ route('public.getLogin') }}">Login</a>
+            <a href="{{ route('public.getLogin') }}">{{ trans('forms.actions.login') }}</a>
         </div>
     </form>
 @endsection
